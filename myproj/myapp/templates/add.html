@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Page</title>
+</head>
+<body>
+    <h1 align="center">Add Car!</h1>
+    <table align="center">
+        <form action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+            <tr>
+                <td>Car Name</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="cname" placeholder="Enter Car Name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Car Color</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="ccolor" placeholder="Enter Car Color" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Car Price</td>
+                <td>:</td>
+                <td>
+                    <input type="integer" name="cprice" placeholder="Enter Car Price" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="Add">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <a href="{% url 'display' %}">Display</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <a href="{% url 'index' %}">Index Page</a>
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

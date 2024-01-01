@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Page</title>
+</head>
+<body>
+    <h1 align="center">Display Car!</h1>
+    <table border="2" align="center">
+        <tr>
+            <th>Car Name</th>
+            <th>Car Color</th>
+            <th>Car Price</th>
+            <th colspan="2">Actions</th>
+            <th>Invoice</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.cname}}</td>
+            <td>{{i.ccolor}}</td>
+            <td>{{i.cprice}}</td>
+            <td>
+                <a href="/update/{{i.id}}">Edit</a>
+            </td>
+            <td>
+                <a href="/delete/{{i.id}}">Delete</a>
+            </td>
+            <td>
+                <a href="{% url 'pdf' i.pk %}">Download</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h4 align="center">
+        <a href="{% url 'add' %}">Add</a>
+        <br>
+        <a href="{% url 'index' %}">Index Page</a>
+    </h4>
+</body>
+</html>

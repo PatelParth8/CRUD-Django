@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <h1 align="center">Login Form!</h1>
+    <table align="center">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td>
+                    <input type="email" name="email" placeholder="Enter Your Email ID" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td>
+                    <input type="password" name="password" placeholder="Enter Your Password" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="Login">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <p>
+                        Don't Have an Account? <a href="{% url 'register' %}">Register Here!</a>
+                    </p>
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

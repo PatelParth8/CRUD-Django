@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PUpdate Page</title>
+</head>
+<body>
+    <h1 align="center">Update Car Data!</h1>
+    <table align="center">
+        <form action="/edit/{{upd.id}}" method="post">
+            {% csrf_token %}
+            <tr>
+                <td>Car Name</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="cname" value="{{upd.cname}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Car Color</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="ccolor" value="{{upd.ccolor}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Car Price</td>
+                <td>:</td>
+                <td>
+                    <input type="integer" name="cprice" value="{{upd.cprice}}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
